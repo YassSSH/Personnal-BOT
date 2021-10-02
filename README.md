@@ -1,6 +1,6 @@
 # Personnal-BOT
 Exemple
 
-!ip 8.8.8.8
-!c bitcoin
+<p>!ip 8.8.8.8</p>
+<p>!c bitcoin</p>
 
