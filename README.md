@@ -1,4 +1,3 @@
-# Bot-Discord-IP-LookUp
-Exemple
+# Presonnal BOT
 
-!ip 8.8.8.8
+
