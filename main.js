@@ -128,10 +128,10 @@ client.on("message", async msg => {
             .setTimestamp()
             .setThumbnail(msg.guild.owner.user.displayAvatarURL({ size: 256 }))
             .setTitle(`**Coin Show by Yass#2255**`)
+            .setColor("#F1C40F")
             .setDescription(`**Coin Information**
                 **Coin**: ${args}
-                **Prix**: ${data[args]['eur']} €
-                `)
+                **Prix**: ${data[args]['eur']}`,"€")
             .setImage("https://raw.githubusercontent.com/YassSSH/YassSSH/master/standard%20(1).gif")
             .setFooter(`Yass#2255`)
             .setColor('RANDOM')
@@ -155,7 +155,7 @@ client.on("message", async msg => {
     };
     if (cmd === "clear") {
     msg.channel.bulkDelete(10)
-  .then(messages => msg.channel.send(`J'ai delete ${messages.size} messages`))
+  .then(messages => msg.channel.send(`${messages.size} messages were deleted`))
   .catch(console.error);
     }
 });
