@@ -158,5 +158,41 @@ client.on("message", async msg => {
   .then(messages => msg.channel.send(`${messages.size} messages were deleted`))
   .catch(console.error);
     }
-});
+
+// PUPPETEER 
+const { SIGTERM } = require("constants");
+const puppeteer = require("puppeteer");
+fs = require('fs');
+
+const url = "https://weather.com/fr-FR/temps/aujour/l/48.57,7.75?par=google";
+if (cmd === "meteo"){
+(async() => {
+    const browser = await puppeteer.launch({ headless: true });
+    const page = await browser.newPage();
+    await page.goto(url, { waitUntil: "networkidle2" });
+    await msg.channel.send("Loading...")
+
+    await page.setViewport({
+        width: 1280,
+        height: 1000,
+    });
+    await page.screenshot({
+        path: "C:/Users/Flaquito/Documents/Bot-Discord-IP-LookUp-main/image/image.png",
+    })
+
+    msg.channel.send("**La méteo d'aujourd'hui est :**", { files: ["./image/image.png"] });
+        
+            await browser.close();
+            console.log("End")
+            
+        })();
+}});
+
+
+
+
+    // HTML code grabber
+    // let bodyHTML = await page.evaluate(() => document.body.innerHTML);
+    // fs.writeFile('htmlcode.txt', bodyHTML, function(err) { err = null });
+
 // CODE BY YassSSH, Yass#2255 on discord
