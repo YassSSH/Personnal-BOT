@@ -177,7 +177,7 @@ if (cmd === "meteo"){
         height: 1000,
     });
     await page.screenshot({
-        path: "C:/Users/Flaquito/Documents/Bot-Discord-IP-LookUp-main/image/image.png",
+        path: "PUT YOUR PATH",
     })
 
     msg.channel.send("**La méteo d'aujourd'hui est :**", { files: ["./image/image.png"] });
