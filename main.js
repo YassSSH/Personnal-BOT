@@ -170,7 +170,7 @@ if (cmd === "meteo"){
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: "networkidle2" });
-    await msg.channel.send("Loading...")
+    await msg.channel.send("Loading...").then(msg=>msg.delete({timeout:"3000"}))
 
     await page.setViewport({
         width: 1280,
