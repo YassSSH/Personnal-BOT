@@ -170,19 +170,44 @@ if (cmd === "meteo"){
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: "networkidle2" });
-    await msg.channel.send("Loading...").then(msg=>msg.delete({timeout:"3000"}))
+    await msg.channel.send("**[#.......................]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[##......................]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[###.....................]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[####....................]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[#####...................]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[######..................]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[#######.................]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[########................]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[#########...............]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[##########..............]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[###########.............]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[############............]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[#############...........]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[##############..........]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[###############.........]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[################........]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[#################.......]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[##################......]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[###################.....]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[####################....]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[#####################...]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[######################..]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[#######################.]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("**[########################]**").then(msg=>msg.delete({timeout:"500"}))
+    await msg.channel.send("Done :white_check_mark: ").then(msg=>msg.delete({timeout:"1000"}))
 
     await page.setViewport({
         width: 1280,
-        height: 1000,
+        height: 1400,
     });
+    page.click("button.truste-button2")
     await page.screenshot({
-        path: "PUT YOUR PATH",
+        path: "C:/Users/Flaquito/Documents/Bot-Discord-IP-LookUp-main/image/image.png",
     })
 
     msg.channel.send("**La méteo d'aujourd'hui est :**", { files: ["./image/image.png"] });
         
-            await browser.close();
+          await browser.close()
             console.log("End")
             
         })();
