@@ -170,39 +170,13 @@ if (cmd === "meteo"){
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: "networkidle2" });
-    await msg.channel.send("**[#.......................]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[##......................]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[###.....................]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[####....................]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[#####...................]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[######..................]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[#######.................]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[########................]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[#########...............]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[##########..............]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[###########.............]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[############............]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[#############...........]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[##############..........]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[###############.........]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[################........]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[#################.......]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[##################......]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[###################.....]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[####################....]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[#####################...]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[######################..]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[#######################.]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("**[########################]**").then(msg=>msg.delete({timeout:"500"}))
-    await msg.channel.send("Done :white_check_mark: ").then(msg=>msg.delete({timeout:"1000"}))
-
     await page.setViewport({
         width: 1280,
         height: 1400,
     });
-    page.click("button.truste-button2")
+ 
     await page.screenshot({
-        path: "C:/Users/Flaquito/Documents/Bot-Discord-IP-LookUp-main/image/image.png",
+        path: "C:/Users/Yassi/Downloads/Personnal-BOT-main/image/image.png",
     })
 
     msg.channel.send("**La méteo d'aujourd'hui est :**", { files: ["./image/image.png"] });
@@ -211,7 +185,31 @@ if (cmd === "meteo"){
             console.log("End")
             
         })();
-}});
+}
+const url1 = "https://camo.githubusercontent.com/fb505d917b6120dddd5e85961f5745df586e918639bb853d68695a79e4c8bf9a/68747470733a2f2f6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d59617373535348267468656d653d626c75652d677265656e"
+if(cmd == "code"){
+    (async() => {
+        const browser = await puppeteer.launch({ headless: true });
+        const page = await browser.newPage();
+        await page.goto(url1, { waitUntil: "networkidle2" });
+
+        await page.setViewport({
+            width: 299,
+            height: 282,
+        });
+        await page.screenshot({
+            path: "C:/Users/Yassi/Downloads/Personnal-BOT-main/image/image1.png",
+        })
+    
+        msg.channel.send("**Tiens bg:**", { files: ["./image/image1.png"] });
+            
+              await browser.close()
+                console.log("End")
+                
+            })();
+    
+    }
+});
 
 
 
